@@ -1,0 +1,14 @@
+<header [ngStyle] ="{'text-align':'center'}" >
+    <h1 [ngClass]="heading">{{title}}</h1>
+    <input type="text" id="addInput">
+    <add-button (addNoteBtn)="addNoteIn()"></add-button>
+</header>
+<main>
+    <div *ngFor="let note of notes">
+        <p>{{ note.id }}</p>
+        <p>{{ note.content }}</p>
+        <button (click)="onDelete(note)">delete</button>
+    </div>
+</main>
+
+<!-- [ngStyle]="{'display': 'flex', 'align-items':'center', 'justify-content':'space-between'}" -->
