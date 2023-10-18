@@ -1,5 +1,22 @@
-#addInput{
+#text{
     outline: none;
     width: 17rem;
     border-bottom: 2px solid brown;
+    background-color: #000;
+    color: #fff;
+}
+
+.note-content{
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(87, 86, 86);
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    max-width: 19rem;
+}
+
+.delete-btn{
+    max-width: 2rem;
 }

@@ -1,13 +1,30 @@
-<header [ngStyle] ="{'text-align':'center'}" >
+<header [ngStyle]="{'text-align':'center'}">
     <h1 [ngClass]="heading">{{title}}</h1>
-    <input type="text" id="addInput">
-    <add-button (addNoteBtn)="addNoteIn()"></add-button>
+
+
+    <form (ngSubmit)="onSubmit()">
+        <input type="text" name="text" id="text" [(ngModel)]="text" placeholder="task to do">
+        <add-button (addNoteBtn)="addNoteIn()"></add-button>
+    </form>
+
 </header>
-<main>
-    <div *ngFor="let note of notes">
-        <p>{{ note.id }}</p>
-        <p>{{ note.content }}</p>
-        <button (click)="onDelete(note)">delete</button>
+<main [ngStyle]="{
+    
+                'padding':'1rem 1rem', 
+                'overflow':'scroll',
+                'overflow-X':'hidden',
+                'height':'calc(100vh - 200px)',
+                'scroll-gutter':'stable',
+                'width':'100%'
+            
+            }">
+    <div class="note-content" *ngFor="let note of notes">
+        <div [ngStyle]="{'width':'12rem','word-wrap':'break-word','flex':'1'}">
+            <p>{{ note.content }}</p>
+        </div>
+        <div [ngStyle]="{'margin-left':'1rem'}">
+            <button  class="delete-btn" (click)="onDelete(note)"><i class="fa-solid fa-xmark"></i></button>
+        </div>
     </div>
 </main>
 
