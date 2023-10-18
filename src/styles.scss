@@ -19,15 +19,16 @@ body {
   max-width: 400px;
   margin: 30px auto;
   overflow: auto;
-  min-height: 300px;
+  height:calc(100vh - 50px);
   border: 1px solid steelblue;
   padding: 1.5rem;
   border-radius: 5px;
+  background-color: #000;
 }
 .btn {
   display: inline-block;
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   border: none;
   padding: 10px 15px;
   margin: 5px;  
@@ -82,4 +83,5 @@ body {
 .heading {
   font-size: 2rem;
   font-weight: bold;
+  color: #fff;
 }
